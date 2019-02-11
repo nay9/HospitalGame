@@ -4,7 +4,8 @@ public class Janitor extends Employee {
 
 	private String jobTitle;
 	private int employeeSalary;
-	public Janitor(String employeeName, int employeeId, int employeeSalary, String jobTitle) {
+	private boolean isSweeping;
+	public Janitor(String employeeName, int employeeId, int employeeSalary, String jobTitle, boolean isSweeping) {
 		super(employeeName, employeeId);
 		this.employeeSalary = 40000;
 		this.jobTitle = "Janitor";
@@ -14,6 +15,9 @@ public class Janitor extends Employee {
 	}
 	public int getEmployeeSalary() {
 		return employeeSalary;
+	}
+	public boolean getIsSweeping() {
+		return isSweeping;
 	}
 
 }

@@ -2,12 +2,18 @@ package highhospital;
 
 import java.util.HashMap;
 
-public class Hospital {
+public class HospitalMethods {
 	private HashMap<String, Employee> employees = new HashMap<String, Employee>();
 
 	public void addEmployee(Employee hospitalStaff) {
 		employees.put(hospitalStaff.getEmployeeName(), hospitalStaff);
 	}
+	private HashMap<String, Patient> patients = new HashMap<String, Patient>();
+	
+	public void addPatient(Patient hospitalPatientList) {
+		patients.put(hospitalPatientList.getPatientName(), hospitalPatientList);
+	}
+	
 
 	public void calculatePay() {
 		System.out.println("Here is the payroll information:");
@@ -93,4 +99,22 @@ public class Hospital {
 		}
 		System.out.println("-----------------------------------------");
 	}
+
+	public void patientList() {
+		System.out.println("Here is a list of all patients");
+		System.out.println("Name \tHealth Level \tBlood Level");
+		for (Patient patient : patients.values()) {
+				System.out.println(patient.getPatientName() + "\t" + patient.getHealthLevel() + "\t\t" + patient.getBloodLevel());
+		}
+		System.out.println("-----------------------------------------");
+	}
+	
+	public void cureAllPatients() {
+		for (Patient patient : patients.values()) {
+			patient.curePatient();
+			}
+	}
+
+	
+
 }

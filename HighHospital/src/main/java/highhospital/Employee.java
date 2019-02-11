@@ -24,6 +24,10 @@ public abstract class Employee {
 		}
 			return employeeId;
 		}
+		public void incrementStatus() {
+			return;
+
+		}
 		
 }
 

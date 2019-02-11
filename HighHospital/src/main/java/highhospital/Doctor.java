@@ -3,8 +3,6 @@ package highhospital;
 
 
 class Doctor extends Medical {
-
-
 	private int employeeSalary;
 	private String jobTitle;
 	public Doctor(String employeeName, int employeeId,  boolean canDrawBlood,
