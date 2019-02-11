@@ -2,34 +2,25 @@ package highhospital;
 
 import java.util.Random;
 
-public abstract class Employee {
+public abstract class Employee extends Human {
 	Random employeeIdnumber = new Random();
-		private String employeeName;
-		private int employeeId;
+	private int employeeId;
 
+	public Employee(String humanName, int employeeId) {
+		super(humanName);
+		this.employeeId = employeeId;
+	}
 
-		public Employee(String employeeName, int employeeId) {
-
-			this.employeeName = employeeName;
-			this.employeeId = employeeId;
+	public int getEmployeeId() {
+		if (employeeId == 0) {
+			this.employeeId = employeeIdnumber.nextInt(1000);
 		}
+		return employeeId;
+	}
 
-		public String getEmployeeName() {
-			return employeeName;
-		}
+	public void incrementStatus() {
+		return;
 
-		public int getEmployeeId() {
-			if(employeeId == 0) {
-				this.employeeId = employeeIdnumber.nextInt(1000);
-		}
-			return employeeId;
-		}
-		public void incrementStatus() {
-			return;
+	}
 
-		}
-		
 }
-
-
-
